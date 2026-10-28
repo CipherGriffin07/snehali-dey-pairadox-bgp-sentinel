@@ -1,0 +1,37 @@
+
+/* Pairadox SOC enhancements — append to existing App.css */
+.cyber-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.cyber-grid>.panel{min-width:0}
+.cyber-grid .panel-header h3{display:flex;align-items:center;gap:9px}
+.cyber-tag{font:10px 'JetBrains Mono',monospace;color:#00e5ff;border:1px solid #1b5260;border-radius:4px;padding:7px 9px;white-space:nowrap}
+.topology-wrap{width:100%;overflow:hidden}.topology-wrap svg{width:100%;height:auto;min-height:260px;display:block}
+.topo-ring{fill:none;stroke:#143b4d;stroke-width:1;stroke-dasharray:5 9;animation:topo-spin 35s linear infinite;transform-origin:250px 160px}
+.topo-ring-outer{stroke:#0d2b3d;animation-direction:reverse}
+.topo-link{stroke:#00d4ef;stroke-width:1.5;stroke-dasharray:6 6;animation:topo-flow 5s linear infinite}
+.topo-link.flagged{stroke:#ff4869;stroke-width:2}
+.topo-node{fill:#092b39;stroke:#00e5ff;stroke-width:2;filter:drop-shadow(0 0 5px #00e5ff77)}
+.topo-node.flagged{fill:#351623;stroke:#ff4869;filter:drop-shadow(0 0 6px #ff486988)}
+.topo-core{fill:#0b3545;stroke:#00e5ff;stroke-width:2;filter:drop-shadow(0 0 9px #00e5ff77)}
+.topo-as,.topo-core-text{fill:#e9faff;font:700 11px 'JetBrains Mono',monospace}
+.topo-core-text{font-size:13px}.topo-core-sub{fill:#00e5ff;font:8px 'JetBrains Mono',monospace;letter-spacing:1px}
+.topo-label{fill:#a1cad8;font:10px 'JetBrains Mono',monospace}.topo-empty{fill:#6d93a7;font:11px 'JetBrains Mono',monospace}
+.topology-legend{display:flex;gap:17px;justify-content:center;flex-wrap:wrap;color:#8ea9bb;font:10px 'JetBrains Mono',monospace}
+.legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.legend-dot.safe{background:#00e5ff}.legend-dot.danger{background:#ff4869}
+.event-timeline{display:flex;flex-direction:column;gap:8px;max-height:345px;overflow:auto}
+.event-item{width:100%;display:flex;align-items:center;gap:13px;text-align:left;padding:13px;background:#071827;border:1px solid #1b3548;border-radius:6px;box-shadow:none;font-weight:400;letter-spacing:0}
+.event-item:hover{background:#102536}.event-item>span:nth-child(2){flex:1;min-width:0}
+.event-item strong{display:block;font:600 11px 'JetBrains Mono',monospace;color:#d5f4ff;overflow-wrap:anywhere}
+.event-item small{display:block;margin-top:5px;color:#819eaf;font:10px 'JetBrains Mono',monospace}
+.event-dot{height:10px;width:10px;flex-shrink:0;border-radius:50%;background:#00e5ff;box-shadow:0 0 10px #00e5ff66}
+.event-dot.critical{background:#ff4869;box-shadow:0 0 10px #ff486966}.event-dot.high{background:#ffca68}.event-dot.medium{background:#60a5fa}
+.event-risk{font:700 19px 'JetBrains Mono',monospace;color:#ffca68}.event-risk small{font-size:9px;text-align:right}
+.risk-readout{display:flex;align-items:baseline;gap:8px;margin:8px 0 17px}.risk-readout strong{font:700 66px 'JetBrains Mono',monospace;color:#00e5ff;text-shadow:0 0 18px #00e5ff33}.risk-readout span{color:#7997aa;font:13px 'JetBrains Mono',monospace}
+.risk-track{height:10px;background:#122d3b;border-radius:20px;overflow:hidden}.risk-track>div{height:100%;background:linear-gradient(90deg,#00e5ff,#ffca68,#ff4869);border-radius:20px;transition:width .5s}
+.risk-disclaimer{font-size:11px;color:#8faabc;line-height:1.8;margin-top:17px}
+.terminal-live{font:10px 'JetBrains Mono',monospace;color:#00ffad;white-space:nowrap}.terminal-live .dot{width:6px;height:6px}
+.terminal-body{background:#040d14;border:1px solid #1b3548;border-radius:5px;padding:15px;min-height:165px;max-height:240px;overflow:auto}
+.terminal-line{font:11px/2 'JetBrains Mono',monospace;color:#9dc2d0;overflow-wrap:anywhere}.terminal-line>span{color:#00ffad;margin-right:10px}.terminal-line .terminal-warning{color:#ff708c}
+.terminal-cursor{color:#00e5ff}.terminal-cursor b{animation:cursor-blink 1s steps(1) infinite}
+@keyframes topo-flow{to{stroke-dashoffset:-60}}@keyframes topo-spin{to{transform:rotate(360deg)}}@keyframes cursor-blink{50%{opacity:0}}
+@media(max-width:1050px){.cyber-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.topo-ring,.topo-link,.terminal-cursor b{animation:none}}

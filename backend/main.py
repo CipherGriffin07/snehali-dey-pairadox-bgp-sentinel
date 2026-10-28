@@ -16,7 +16,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173"
+        "http://127.0.0.1:5173",
+        "https://snehali-dey-pairadox-bgp-sentinel.vercel.app"
     ],
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
@@ -116,6 +117,6 @@ def reset_data():
     detector = BGPDetector()
 
     return {
-        "message": "Demo data reset successfully",
+        "message": "Reset successfully",
         "status": "success"
     }
